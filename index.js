@@ -6,13 +6,14 @@ import { Map } from 'leaflet';
 // appDiv.innerHTML = `<h1>JS Starter</h1>`;
 
 //创建高德地图
-var amap = new Map('amap', {
-  center: [10],
+var amap = new AMap.Map('amap', {
   fadeOnZoom: false,
   navigationMode: 'classic',
   optimizePanAnimation: false,
   animateEnable: false,
   dragEnable: false,
+  // mapStyle: 'amap://styles/whitesmoke',
+  mapStyle: 'amap://styles/242e59d29506cac6a4d60c3ad08f4951',
   zoomEnable: false,
   resizeEnble: true,
   doubleClickZoom: false,
@@ -20,12 +21,13 @@ var amap = new Map('amap', {
   scrollWheel: false,
   expandZoomRange: true,
   zooms: [1, 20],
-  mapStyle: 'normal',
   features: ['road', 'point', 'bg'],
   viewMode: '2D',
 });
-// const amap = new Map('amap');
-var map = new Map('map');
+// var amap = new AMap.Map('amap');
+
+const map = new Map('map');
+// var map = new Map('map');
 map.on('zoom', (evt) => {
   amap.setZoom(evt.target.getZoom());
 });
